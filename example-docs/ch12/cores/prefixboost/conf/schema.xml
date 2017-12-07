@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema name="example" version="1.6">
+  <types>
+      <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
+      <fieldType name="long" class="solr.TrieLongField" precisionStep="0" 
+          positionIncrementGap="0" />
+      <fieldType name="tlong" class="solr.TrieLongField" precisionStep="8" 
+          positionIncrementGap="0" />
+      <fieldType name="int" class="solr.TrieIntField" precisionStep="0" 
+          positionIncrementGap="0" />
+      <fieldType name="tint" class="solr.TrieIntField" precisionStep="8" 
+          positionIncrementGap="0" />
+      <fieldType name="float" class="solr.TrieFloatField" precisionStep="0"   
+          positionIncrementGap="0"/>
+      <fieldType name="tfloat" class="solr.TrieFloatField" precisionStep="8"   
+          positionIncrementGap="0"/>
+      <fieldType name="date" class="solr.TrieDateField" omitNorms="true" />
+      <fieldType name="tdate" class="solr.TrieDateField" precisionStep="6" 
+          positionIncrementGap="0"/>
+
+      <fieldType name="text_lowercase" class="solr.TextField" 
+          positionIncrementGap="100">
+      <analyzer>
+        <tokenizer class="solr.StandardTokenizerFactory"/>
+        <filter class="solr.LowerCaseFilterFactory" />
+      </analyzer>
+    </fieldType>
+
+    <fieldType name="text_lower_exact" class="solr.TextField" 
+        positionIncrementGap="100" sortMissingLast="true" omitNorms="true">
+      <analyzer>
+          <charFilter class="solr.PatternReplaceCharFilterFactory"
+                    pattern="^(.*)$" replacement="ǣ $1 Ǣ" />
+          <tokenizer class="solr.StandardTokenizerFactory"/>
+          <filter class="solr.LowerCaseFilterFactory" />
+          <filter class="solr.PatternReplaceFilterFactory"
+                    pattern="([^a-z0-9æøåüäöóéúǣǢ ])" 
+                    replacement="" replace="all" />
+      </analyzer>
+    </fieldType>
+  </types>
+
+  <fields>
+      <field name="id" type="string" indexed="true" stored="true" required="true"/>
+      <field name="name" type="text_lowercase" indexed="true" stored="true" 
+          omitNorms="true" />
+      <field name="exactname" type="text_lower_exact" indexed="true" stored="false"
+          omitNorms="true" />
+      <field name="_version_" type="long" indexed="true" stored="true" />
+      <copyField source="name" dest="exactname"/>
+  </fields>
+  <uniqueKey>id</uniqueKey>
+</schema>

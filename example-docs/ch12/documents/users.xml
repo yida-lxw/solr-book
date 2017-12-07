@@ -1,0 +1,47 @@
+<add>
+  <doc>
+  <field name="id">1</field>
+  <field name="user_name">张三</field>
+  <field name="age">25</field>
+      <doc>
+        <field name="id">4</field>  
+        <field name="amount">725.4</field>
+        <field name="occur_date">2016-09-30T08:00:00.0Z</field>
+      </doc>
+      <doc>
+        <field name="id">5</field>  
+        <field name="amount">199.0</field>
+        <field name="occur_date">2016-10-02T11:00:00.0Z</field>
+      </doc>
+      <doc>
+        <field name="id">6</field>  
+        <field name="amount">490.5</field>
+        <field name="occur_date">2016-10-18T09:10:00.0Z</field>
+      </doc>
+  </doc>
+  <doc>
+    <field name="id">2</field>
+    <field name="user_name">李四</field>
+    <field name="age">28</field>
+        <doc>
+            <field name="id">7</field>  
+            <field name="amount">288.2</field>
+            <field name="occur_date">2016-10-09T08:00:00.0Z</field>
+        </doc>
+        <doc>
+            <field name="id">8</field>  
+            <field name="amount">69.1</field>
+            <field name="occur_date">2016-10-10T11:00:00.0Z</field>
+        </doc>
+  </doc>
+  <doc>
+    <field name="id">3</field>
+    <field name="user_name">王五</field>
+    <field name="age">20</field>
+        <doc>
+            <field name="id">9</field>  
+            <field name="amount">1028.2</field>
+            <field name="occur_date">2016-08-19T11:30:00.0Z</field>
+        </doc>
+  </doc>
+</add>

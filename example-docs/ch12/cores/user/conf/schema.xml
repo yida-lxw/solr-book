@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema name="example" version="1.6">
+<types>
+<fieldType name="string" class="solr.StrField" sortMissingLast="true"/>
+<fieldType name="long" class="solr.TrieLongField" precisionStep="0" 
+positionIncrementGap="0"/>
+<fieldType name="tlong" class="solr.TrieLongField" precisionStep="8" 
+positionIncrementGap="0"/>
+<fieldType name="int" class="solr.TrieIntField" precisionStep="0" 
+positionIncrementGap="0"/>
+<fieldType name="tint" class="solr.TrieIntField" precisionStep="8" 
+positionIncrementGap="0"/>
+<fieldType name="float" class="solr.TrieFloatField" precisionStep="0"   
+positionIncrementGap="0"/>
+<fieldType name="tfloat" class="solr.TrieFloatField" precisionStep="8"   
+positionIncrementGap="0"/>
+<fieldType name="date" class="solr.TrieDateField" omitNorms="true"/>
+<fieldType name="tdate" class="solr.TrieDateField" precisionStep="6" 
+positionIncrementGap="0"/>
+</types>
+<fields>
+<field name="id" type="string" indexed="true" stored="true"/>
+<field name="user_name" type="string" indexed="true" stored="true"/>
+<field name="age" type="int" indexed="true" stored="true"/>
+<field name="orders_id" type="long" indexed="true" stored="true"/>
+<!--消费金额-->
+<field name="amount" type="float" indexed="true" stored="true"/>
+<!--交易发生时间-->
+<field name="occur_date" type="date" indexed="true" stored="true"/>
+<!-- 嵌套Document必须添加_root_域 -->
+<field name="_root_" type="string" indexed="true" stored="false"/>
+<field name="_version_" type="long" indexed="true" stored="true"/>
+</fields>
+<uniqueKey>id</uniqueKey>
+</schema>

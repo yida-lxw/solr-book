@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <luceneMatchVersion>5.3.1</luceneMatchVersion>
+    <dataDir>${solr.data.dir:}</dataDir>
+    <lib dir="./lib" regex=".*\.jar"/>
+    <directoryFactory name="DirectoryFactory"
+                    class="${solr.directoryFactory:solr.NRTCachingDirectoryFactory}"/> 
+    <codecFactory class="solr.SchemaCodecFactory"/>
+    <schemaFactory class="ClassicIndexSchemaFactory"/>
+    <updateHandler class="solr.DirectUpdateHandler2">
+      <updateLog>
+        <str name="dir">${solr.ulog.dir:}</str>
+      </updateLog>
+     <autoCommit>
+       <maxTime>15000</maxTime> 
+       <openSearcher>false</openSearcher> 
+     </autoCommit>
+    </updateHandler>
+    <query>
+        <maxBooleanClauses>1024</maxBooleanClauses>
+        <useColdSearcher>false</useColdSearcher>
+        <maxWarmingSearchers>1</maxWarmingSearchers>
+    </query>
+    <requestDispatcher handleSelect="false" >
+        <httpCaching never304="true" />
+    </requestDispatcher>
+
+    <requestHandler name="/update" class="solr.UpdateRequestHandler" />
+    <requestHandler name="/select" class="solr.SearchHandler">
+        <lst name="defaults">
+            <str name="echoParams">none</str>
+            <str name="df">text</str>
+            <str name="wt">json</str>
+            <str name="indent">true</str>
+        </lst>
+    </requestHandler>
+
+    <requestHandler name="standard" class="solr.StandardRequestHandler">
+          <lst name="defaults">
+                <int name="hl.snippets">10</int>
+                <str name="hl.tag.pre">&lt;em&gt;</str>
+                <str name="hl.tag.post">&lt;/em&gt;</str>
+                <str name="hl.tag.ellipsis">... </str>
+                <bool name="hl.defaultSummary">true</bool>
+                <str name="hl.boundaryScanner">breakIterator</str>
+                <str name="hl.encoder">simple</str>
+                <float name="hl.score.k1">1.2</float>
+                <float name="hl.score.b">0.75</float>
+                <float name="hl.score.pivot">87</float>
+                <str name="hl.bs.language"></str>
+                <str name="hl.bs.country"></str>
+                <str name="hl.bs.variant"></str>
+                <str name="hl.bs.type">SENTENCE</str>
+                <int name="hl.maxAnalyzedChars">10000</int>
+          </lst>
+          <arr name="last-components">
+              <str>highlight</str>
+          </arr>
+    </requestHandler>
+
+    <boundaryScanner name="breakIterator" class="solr.highlight.BreakIteratorBoundaryScanner">
+      <lst name="defaults">
+        <str name="hl.bs.type">WORD</str>
+        <str name="hl.bs.language">en</str>
+        <str name="hl.bs.country">US</str>
+      </lst>
+    </boundaryScanner>
+
+
+    <searchComponent class="solr.HighlightComponent" name="highlight">
+      <highlighting class="org.apache.solr.highlight.PostingsSolrHighlighter"/>
+    </searchComponent>
+
+
+    <queryResponseWriter name="json" class="solr.JSONResponseWriter">
+        <str name="content-type">text/plain; charset=UTF-8</str>
+    </queryResponseWriter>
+    <admin>
+        <defaultQuery>*:*</defaultQuery>
+    </admin>
+</config>

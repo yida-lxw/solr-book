@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema name="example" version="1.6">
+  <types>
+      <fieldType name="uuid" class="solr.UUIDField" indexed="true"/>
+      <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
+      <fieldType name="long" class="solr.TrieLongField" precisionStep="0" 
+          positionIncrementGap="0" />
+      <fieldType name="tlong" class="solr.TrieLongField" precisionStep="8" 
+          positionIncrementGap="0" />
+      <fieldType name="int" class="solr.TrieIntField" precisionStep="0" 
+          positionIncrementGap="0" />
+      <fieldType name="tint" class="solr.TrieIntField" precisionStep="8" 
+          positionIncrementGap="0" />
+      <fieldType name="float" class="solr.TrieFloatField" precisionStep="0"   
+          positionIncrementGap="0"/>
+      <fieldType name="tfloat" class="solr.TrieFloatField" precisionStep="8"   
+          positionIncrementGap="0"/>
+      <fieldType name="date" class="solr.TrieDateField" omitNorms="true" />
+      <fieldType name="tdate" class="solr.TrieDateField" precisionStep="6" 
+          positionIncrementGap="0"/>
+  </types>
+  <fields>
+      <field name="id" type="uuid" indexed="true" stored="true" required="true" multiValued="false"/>
+      <field name="zk_server_id" type="string" indexed="true" stored="true"/>
+      <field name="log_datetime" type="string" indexed="true" stored="true"/>
+      <field name="log_level" type="string" indexed="true" stored="true"/>
+      <field name="log_class" type="string" indexed="true" stored="true"/>
+      <field name="log_msg" type="string" indexed="true" stored="true"/>
+      <field name="_version_" type="long" indexed="true" stored="true" />
+  </fields>
+  <uniqueKey>id</uniqueKey>
+</schema>

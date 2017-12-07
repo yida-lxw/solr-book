@@ -1,0 +1,20 @@
+<add>
+     <doc>
+          <field name="id">1</field>
+          <field name="category">0/NonFic</field>
+          <field name="category">1/NonFic/Law</field>
+     </doc>
+     <doc>
+          <field name="id">2</field>
+          <field name="category">0/NonFic</field>
+          <field name="category">1/NonFic/Sci</field>
+     </doc>
+     <doc>
+          <field name="id">3</field>
+          <field name="category">0/NonFic</field>
+          <field name="category">1/NonFic/Hist</field>
+          <field name="category">0/NonFic</field>
+          <field name="category">1/NonFic/Sci</field>
+          <field name="category">2/NonFic/Sci/Phys</field>
+     </doc>
+</add>

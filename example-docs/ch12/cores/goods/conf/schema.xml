@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema name="example" version="1.6">
+  <types>
+      <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
+      <fieldType name="long" class="solr.TrieLongField" precisionStep="0" 
+          positionIncrementGap="0" />
+      <fieldType name="tlong" class="solr.TrieLongField" precisionStep="8" 
+          positionIncrementGap="0" />
+      <fieldType name="int" class="solr.TrieIntField" precisionStep="0" 
+          positionIncrementGap="0" />
+      <fieldType name="tint" class="solr.TrieIntField" precisionStep="8" 
+          positionIncrementGap="0" />
+      <fieldType name="double" class="solr.TrieDoubleField" omitNorms="true" />
+      <fieldType name="date" class="solr.TrieDateField" omitNorms="true" />
+  </types>
+
+  <fields>
+      <field name="id" type="string" indexed="true" stored="true" />
+      <field name="goods_name" type="string" indexed="true" stored="true" />
+      <field name="category" type="string" indexed="true" stored="true" />
+      <field name="category_id" type="string" indexed="true" stored="true" />
+      <field name="_version_" type="long" indexed="true" stored="true" />
+  </fields>
+  <uniqueKey>id</uniqueKey>
+</schema>

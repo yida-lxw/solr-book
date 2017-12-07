@@ -1,0 +1,19 @@
+<add>
+    <doc>
+        <field name="id">10</field>
+        <field name="type">parent</field>
+        <field name="brand">Nike</field>
+        <doc>
+            <field name="id">11</field>
+            <field name="type">child</field>
+            <field name="color">Red</field>
+            <field name="size">XL</field>
+        </doc>
+        <doc>
+            <field name="id">12</field>
+            <field name="type">child</field>
+            <field name="color">Blue</field>
+            <field name="size">XL</field>
+        </doc>
+    </doc>
+</add>

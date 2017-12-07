@@ -1,0 +1,49 @@
+<add>
+    <doc>
+        <field name="id">1</field>
+        <field name="category">手机</field>
+    </doc>
+    <doc>
+        <field name="id">2</field>
+        <field name="category">电脑</field>
+    </doc>
+    <doc>
+        <field name="id">3</field>
+        <field name="category">Book</field>
+    </doc>
+    <doc>
+        <field name="id">4</field>
+        <field name="goods_name">iPhone 7</field>
+        <field name="category_id">1</field>
+    </doc>
+    <doc>
+        <field name="id">5</field>
+        <field name="goods_name">iPhone 6 Plus</field>
+        <field name="category_id">1</field>
+    </doc>
+    <doc>
+        <field name="id">6</field>
+        <field name="goods_name">iPhone 6S</field>
+        <field name="category_id">1</field>
+    </doc>
+    <doc>
+        <field name="id">7</field>
+        <field name="goods_name">Mac Pro</field>
+        <field name="category_id">2</field>
+    </doc>
+    <doc>
+        <field name="id">8</field>
+        <field name="goods_name">Mac Air</field>
+        <field name="category_id">2</field>
+    </doc>
+    <doc>
+        <field name="id">9</field>
+        <field name="goods_name">Solr in action</field>
+        <field name="category_id">3</field>
+    </doc>
+    <doc>
+        <field name="id">10</field>
+        <field name="goods_name">Lucene in action</field>
+        <field name="category_id">3</field>
+    </doc>
+</add>

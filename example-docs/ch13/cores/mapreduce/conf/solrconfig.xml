@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <luceneMatchVersion>5.3.1</luceneMatchVersion>
+    <dataDir>${solr.data.dir:}</dataDir>
+    <lib dir="./lib" regex=".*\.jar"/>
+    <directoryFactory name="DirectoryFactory"
+                    class="${solr.directoryFactory:solr.NRTCachingDirectoryFactory}"/> 
+    <codecFactory class="solr.SchemaCodecFactory"/>
+    <schemaFactory class="ClassicIndexSchemaFactory"/>
+    <updateHandler class="solr.DirectUpdateHandler2">
+      <updateLog>
+        <str name="dir">${solr.ulog.dir:}</str>
+      </updateLog>
+     <autoCommit>
+       <maxTime>15000</maxTime> 
+       <openSearcher>false</openSearcher> 
+     </autoCommit>
+    </updateHandler>
+    <query>
+        <maxBooleanClauses>1024</maxBooleanClauses>
+        <useColdSearcher>false</useColdSearcher>
+        <maxWarmingSearchers>1</maxWarmingSearchers>
+    </query>
+    <requestDispatcher handleSelect="false" >
+        <httpCaching never304="true" />
+    </requestDispatcher>
+
+    <requestHandler name="/export" class="solr.SearchHandler">
+      <lst name="invariants">
+        <str name="rq">{!xport}</str>
+        <str name="wt">xsort</str>
+        <str name="distrib">false</str>
+      </lst>
+      <arr name="components">
+        <str>query</str>
+      </arr>
+    </requestHandler>
+    <requestHandler name="/update" class="solr.UpdateRequestHandler" />
+    <requestHandler name="/select" class="solr.SearchHandler">
+        <lst name="defaults">
+            <str name="echoParams">none</str>
+            <str name="df">text</str>
+            <str name="wt">json</str>
+            <str name="indent">true</str>
+        </lst>
+    </requestHandler>
+    <queryResponseWriter name="json" class="solr.JSONResponseWriter">
+        <str name="content-type">text/plain; charset=UTF-8</str>
+    </queryResponseWriter>
+    <admin>
+        <defaultQuery>*:*</defaultQuery>
+    </admin>
+</config>

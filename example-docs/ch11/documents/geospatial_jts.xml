@@ -1,0 +1,33 @@
+<add>
+     <doc>
+          <field name="id">1</field>
+          <field name="location">POINT(33.748 84.391)</field>
+          <field name="location_rpt">POLYGON((-10 30, -40 40, -10 -20, 40 20, 0 0, -10 30))</field> 
+          <field name="city">Atlanta, GA</field>
+     </doc>
+     <doc>
+          <field name="id">2</field>
+          <field name="location">POINT(40.715 74.007)</field>
+          <field name="location_rpt">POLYGON((-10 30, -40 40, -10 -20, 40 20, 0 0, -10 30))</field> 
+          <field name="city">New York, NY</field>
+     </doc>
+     <doc>
+          <field name="id">3</field>
+          <field name="location">POINT(37.775 22.419)</field>
+          <field name="location_rpt">POLYGON((-10 30, -40 40, -10 -20, 40 20, 0 0, -10 30))</field> 
+          <field name="city">San Francisco, CA</field>
+     </doc>
+     <doc>
+          <field name="id">4</field>
+          <field name="location">POINT(37.445 22.161)</field>
+          <field name="location_rpt">POLYGON((-10 30, -40 40, -10 -20, 40 20, 0 0, -10 30))</field> 
+          <field name="city">Palo Alto, CA</field>
+     </doc>
+
+     <doc>
+          <field name="id">4</field>
+          <field name="location">POINT(37.445 22.161)</field>
+          <field name="location_rpt">LINESTRING(-74.093 41.042, -69.347 40, -74.093 41.042)</field>
+          <field name="city">Palo Alto, CA</field>
+     </doc>
+</add>

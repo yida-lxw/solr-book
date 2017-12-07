@@ -1,0 +1,14 @@
+<add>
+     <doc>
+          <field name="id">1</field>
+          <field name="basePrice">10</field>
+          <field name="date">2005-02-21T08:00:00.0Z</field>
+          <field name="bl">true</field>
+     </doc>
+     <doc>
+          <field name="id">2</field>
+          <field name="basePrice">7.98</field>
+          <field name="date">2016-08-21T11:12:56.0Z</field>
+          <field name="bl">false</field>
+     </doc>
+</add>

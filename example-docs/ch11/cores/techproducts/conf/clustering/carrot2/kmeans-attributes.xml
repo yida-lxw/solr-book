@@ -1,0 +1,54 @@
+<!-- 
+  Default configuration for the bisecting k-means clustering algorithm.
+  
+  This file can be loaded (and saved) by Carrot2 Workbench.
+  http://project.carrot2.org/download.html
+-->
+<attribute-sets default="attributes">
+    <attribute-set id="attributes">
+      <value-set>
+        <label>attributes</label>
+          <attribute key="MultilingualClustering.defaultLanguage">
+            <!--
+                ARABIC ("ar"),
+                BULGARIAN ("bg"),
+                CZECH ("cs"),
+                CHINESE_SIMPLIFIED ("zh_cn"),
+                CROATIAN("hr"),
+                DANISH ("da"),
+                DUTCH ("nl"),
+                ENGLISH ("en"),
+                ESTONIAN ("et"),
+                FINNISH ("fi"),
+                FRENCH ("fr"),
+                GERMAN ("de"),
+                GREEK ("el"),  
+                HUNGARIAN ("hu"),
+                HINDI("hi"),
+                ITALIAN ("it"),
+                IRISH ("ga"), // (Gaelic)
+                JAPANESE ("ja"),
+                KOREAN ("ko"),
+                LATVIAN ("lv"),
+                LITHUANIAN ("lt"),
+                MALTESE ("mt"),
+                NORWEGIAN ("no"),
+                POLISH ("pl"),
+                PORTUGUESE ("pt"),
+                ROMANIAN ("ro"),
+                RUSSIAN ("ru"),
+                SLOVAK ("sk"),
+                SLOVENE ("sl"),
+                SPANISH ("es"),
+                SWEDISH ("sv"),
+                THAI ("th"),
+                TURKISH ("tr");
+            -->  
+            <value type="org.carrot2.core.LanguageCode" value="ENGLISH"/>
+          </attribute>
+          <attribute key="MultilingualClustering.languageAggregationStrategy">
+            <value type="org.carrot2.text.clustering.MultilingualClustering$LanguageAggregationStrategy" value="FLATTEN_MAJOR_LANGUAGE"/>
+          </attribute>
+      </value-set>
+  </attribute-set>
+</attribute-sets>

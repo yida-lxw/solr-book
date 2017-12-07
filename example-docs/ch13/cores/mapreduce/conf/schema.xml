@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema name="example" version="1.5">
+ <fields>
+    <field name="id" type="string" indexed="true" stored="true" />
+    <field name="_version_" type="long" indexed="true" stored="true"/>
+    <field name="word" type="string" indexed="true" stored="true" docValues="true" />
+    <field name="count" type="int" indexed="true" stored="true" docValues="true" />
+ </fields>
+ <uniqueKey>id</uniqueKey>
+  <types>
+    <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true"/>
+    <fieldType name="date" class="solr.TrieDateField" precisionStep="0" positionIncrementGap="0"/>
+    <fieldType name="double" class="solr.TrieDoubleField" precisionStep="0" positionIncrementGap="0"/>	
+    <fieldType name="int" class="solr.TrieIntField" precisionStep="0" positionIncrementGap="0"/>
+    <fieldType name="long" class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0"/>
+    <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
+   </types>
+</schema>
+
+
+
+

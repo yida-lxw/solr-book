@@ -1,0 +1,14 @@
+<add>
+     <doc>
+          <field name="id">1</field>
+          <field name="category">/usr/local/apache</field>
+     </doc>
+     <doc>
+          <field name="id">2</field>
+          <field name="category">/etc/apache2</field>
+     </doc>
+     <doc>
+          <field name="id">3</field>
+          <field name="category">/etc/apache2/conf.d</field>
+     </doc>
+</add>
